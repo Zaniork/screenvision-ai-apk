@@ -33,9 +33,10 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install Node Dependencies
+      - name: Install Node Dependencies & Vite
         run: |
-          npm install
+          npm install --include=dev
+          npx vite --version || npm install -D vite @vitejs/plugin-react @tailwindcss/vite
 
       - name: Compile Web Application (Vite)
         env:
